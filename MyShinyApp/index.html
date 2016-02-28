@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculating the Area of a Sub-Triangle</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Calculating the Area of a Sub-Triangle">
+  <meta name="author" content="D Risius">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Calculating the Area of a Sub-Triangle</h1>
+    <h2>Given a Larger Triangle</h2>
+    <p>D Risius<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Purpose and Overview</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li>The purpose of this presentation is to explain the accompanying Shiny Application.</li>
+<li>The application takes the input of a triangle with base 1 unit and height 2 units (area = 1 unit squared).</li>
+<li>Next the user specificies a sub-triangle within the given triangle.</li>
+<li>The application plots the triangle and also returns the height and area of the new triangle.</li>
+<li>The application is located at the following site: <a href="https://risiud.shinyapps.io/myShinyApp/">https://risiud.shinyapps.io/myShinyApp/</a></li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Problem</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Imagine that we carry items up to the top of a steep hill that is two units high and one unit long (really steep).  Since the items are really heavy and we will be taking breaks, we would like to know our progress each time we stop. We a device that tells us the horizontal distance travelled. We would like to know two things.</li>
+<li>The vertical distance travelled.</li>
+<li>The area of the hill we have already covered (proportion of the hill completed).</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Visualization</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>The plot below shows the R code and the plot that is given in the application.</li>
+<li>The code takes an input from the user for the desired X Value.  In the code we use xVal = 0.75.</li>
+</ul>
+
+<pre><code class="r">x &lt;- c(-0.5, 0, 1, 1, 1.5); y &lt;- c( 0, 0, 2, 0, 0)
+                        plot(x, y, lwd = 3, frame = TRUE, type = &quot;l&quot;)
+                        title(main = &quot;Calculating the Area of a Right Triangle&quot;)
+                        theta &lt;- atan(2/1) #calculate the angle
+                        xVal &lt;- 0.75
+                        yVal &lt;- tan(theta) * xVal
+                        polygon(c(0, xVal, xVal, 0), c(0, 0, yVal, 0), lwd = 3,
+                                col = &quot;salmon&quot;)
+                        area &lt;- 1/2 * xVal*yVal
+                        text(-.25, 1.75, paste(&quot;X Value = &quot;, xVal))
+                        text(-.25, 1.65, paste(&quot;Y Value = &quot;, yVal))
+                        text(-.25, 1.55, paste(&quot;Area = &quot;, round(area, 2)))
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-1-1.png" alt="plot of chunk unnamed-chunk-1"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Conclusion</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="assets/fig/unnamed-chunk-2-1.png" alt="plot of chunk unnamed-chunk-2"></p>
+
+<p>The application to calculate the area of a sub-triangle is a helpful and useful visualization tool. It allows the user to visualize a triangle and calculate the area.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Purpose and Overview'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Problem'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Visualization'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Conclusion'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>

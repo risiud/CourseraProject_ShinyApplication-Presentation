@@ -1,0 +1,7 @@
+name: Publish Document
+account: rpubs
+server: rpubs.com
+appId: https://api.rpubs.com/api/v1/document/156927/dcb5a6fa109948cd88dcea080f55ef74
+bundleId: https://api.rpubs.com/api/v1/document/156927/dcb5a6fa109948cd88dcea080f55ef74
+url: http://rpubs.com/risiud/156927
+when: 1456697974.75403
